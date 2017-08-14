@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+html, body {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Pingfang SC", "Helvetica Neue", Arial, "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+i, a {
+  color: #000 !important;
+}
+
+a {
+  cursor: pointer;
+}
+
+.border-1px-r {
+  border-right: 1px solid #fff;
+}
+
+.basefont {
+  color: #000;
+  font-size: .4rem;
+}
+
+.overwrite-title-demo {
+  font-size: .7rem;
+  line-height: 46px;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  border-bottom: .1rem solid #E3E3E3;
+}
+
+.fotter {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.vux-header, .vux-header-left, .vux-header-title, .vux-header-right {
+  color: #000 !important;
+  margin: 0 !important;
+}
+
+.vux-header {
+  background: #F8F8F8 !important;
+}
+
+.vux-header-left {
+  left: 30px !important;
+}
+
+.vux-header-title {
+  font-family: "Pingfang SC" !important;
+  font-size: 2rem;
+  font-weight: normal !important;
+  color: #666666 !important;
+}
+
+.left-arrow:before {
+  border-left: 1px solid #000 !important;
+  border-top: 1px solid #000 !important;
+}
+
+.weui-cells__title {
+  font-family: "Pingfang SC" !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  color: #333333 !important;
+}
+
+.weui-actionsheet__cell {
+  font-size: .7rem !important;
+}
+
+.weui-dialog__title {
+  font-size: .8rem !important;
+  font-weight: bold !important;
+}
+
+.weui-dialog__bd {
+  font-size: .7rem !important;
+  text-align: justify !important;
+}
+
+.weui-dialog__ft {
+  font-size: .8rem !important;
+  color: #1C74D9 !important;
+  font-weight: bold;
+}
+
+.weui-dialog__ft a {
+  color: #1C74D9 !important;
+}
+
+.weui-cells {
+  margin-top: .5rem !important;
+  font-size: .9rem !important;
+}
+
+.weui-cell:before {
+  right: .75rem !important;
+  border-top: 1px solid #ebebeb !important;
+}
+
+.weui-cells:before {
+  border-top: 1px solid #ebebeb !important;
+}
+
+.weui-cells:after {
+  border-bottom: 1px solid #ebebeb !important;
+}
+
+
+
+/*@media (max-width: 320px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 767px) {
+  html {
+    font-size: 23px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 30px;
+  }
+}*/
