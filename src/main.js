@@ -8,7 +8,6 @@ import store from './vuex/store'
 import axios from 'axios'
 import {system} from './mock/mock'
 import './style/base.css'
-import './style/font-awesome-4.7.0/css/font-awesome.min.css'
 import App from './App'
 
 FastClick.attach(document.body)
