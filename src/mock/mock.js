@@ -25,11 +25,12 @@ let rooms = Mock.mock ('http://rooms.cn', {
 })
 
 let system = Mock.mock ('http://system.cn', {
-  'remark|200': '@cword'
+  'remark|200': '@cword',
+  'phone': '400-888-2888'
 })
 
 let user = Mock.mock ('http://user.cn', {
-  
+
 })
 
 

@@ -17,7 +17,6 @@ Vue.config.productionTip = false
 
 
 axios.get ('http://system.cn').then (response => {
-  console.log (response.data)
   store.commit ('UPDATE_SYSTEM', response.data)
 }).catch (error => {
   console.log (error)

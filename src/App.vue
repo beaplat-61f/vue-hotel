@@ -6,8 +6,8 @@
       </div>
     </div>
     <view-box ref="viewBox" body-padding-top="100px" body-padding-bottom="50px" :key="key">
-      <topbar slot="header" :title="headerConfig.title"  :topTitle="headerConfig.topTitle">
-        <a class="header-right" slot="rightContent" v-if="headerConfig.showRight">
+      <topbar slot="header" :title="headerConfig.title" :topTitle="headerConfig.topTitle">
+        <a class="header-right" slot="rightContent" v-if="headerConfig.showRight" :href="'tel://'+system.phone">
           <i class="fa fa-phone"></i><span>电话</span>
         </a>
       </topbar>
@@ -34,7 +34,8 @@
     computed: {
       ...mapState ({
         headerConfig: state => state.headerConfig,
-        isLoading: state => state.isLoading
+        isLoading: state => state.isLoading,
+        system: state => state.system
       }),
       key () {
         let now = new Date ()
