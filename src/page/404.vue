@@ -3,7 +3,7 @@
     <div class="not-found">
       <img src="http://echarts.baidu.com/images/404.png" alt="404">
       <div class="text">非常抱歉，您所访问的网页找不到了！您可以选择
-        <router-link :to="{name: 'home'}">返回首页</router-link>
+        <router-link :to="{path: '/'}">返回首页</router-link>
       </div>
     </div>
   </div>

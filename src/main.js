@@ -5,13 +5,24 @@ import FastClick from 'fastclick'
 import router from './router'
 import {sync} from 'vuex-router-sync'
 import store from './vuex/store'
+import axios from 'axios'
+import {system} from './mock/mock'
 import './style/base.css'
 import './style/font-awesome-4.7.0/css/font-awesome.min.css'
 import App from './App'
 
 FastClick.attach(document.body)
 
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
+
+
+axios.get ('http://system.cn').then (response => {
+  console.log (response.data)
+  store.commit ('UPDATE_SYSTEM', response.data)
+}).catch (error => {
+  console.log (error)
+})
 
 sync (store, router)
 router.beforeEach (function (to, from, next) {

@@ -5,10 +5,6 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Pingfang SC", "Helvetica Neue", Arial, "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif !important;
 }
 
-i, a {
-  color: #000 !important;
-}
-
 a {
   cursor: pointer;
 }
@@ -34,19 +30,20 @@ a {
   left: 0;
   top: 0;
   z-index: 100;
-  border-bottom: .1rem solid #E3E3E3;
+  border-bottom: .1rem solid #DF734B;
 }
 
-.fotter {
+/* .fotter {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 100;
-}
+  color: #000;
+} */
 
 .vux-header, .vux-header-left, .vux-header-title, .vux-header-right {
-  color: #000 !important;
+  color: #DF734B !important;
   margin: 0 !important;
 }
 
@@ -54,20 +51,20 @@ a {
   background: #F8F8F8 !important;
 }
 
-.vux-header-left {
+/* .vux-header-left {
   left: 30px !important;
-}
+} */
 
 .vux-header-title {
   font-family: "Pingfang SC" !important;
   font-size: 2rem;
   font-weight: normal !important;
-  color: #666666 !important;
+  color: #DF734B !important;
 }
 
 .left-arrow:before {
-  border-left: 1px solid #000 !important;
-  border-top: 1px solid #000 !important;
+  border-left: 1px solid #DF734B !important;
+  border-top: 1px solid #DF734B !important;
 }
 
 .weui-cells__title {
@@ -117,6 +114,50 @@ a {
 
 .weui-cells:after {
   border-bottom: 1px solid #ebebeb !important;
+}
+
+.vux-timeline {
+  padding-left: 2rem !important;
+}
+
+.vux-timeline-item-color {
+  background-color: #EB7C42 !important;
+}
+
+.vux-timeline-item-head-first {
+  width: 10px !important;
+  height: 10px !important;
+  left: 0 !important;
+}
+
+.vux-timeline-item-tail {
+  background-color: #E1E2DC !important;
+}
+
+.vux-timeline-item-content {
+  position: relative !important;
+}
+
+.vux-number-selector svg {
+  fill: #A1A1A1 !important;
+}
+
+/* 订单支付页面的到店时间插件样式 FillOrder.vue */
+.fill-order .content .weui-cell {
+  padding: 0 !important;
+  display: inline-block !important;
+}
+
+/* .content .weui-cell__ft {
+  color: #DB905C !important;
+} */
+
+.fill-order .content .weui-cell_access .weui-cell__ft:after {
+  border: none !important;
+}
+
+.fill-order .tip .weui-cells {
+  background-color: rgba(255,255,255,0) !important;
 }
 
 

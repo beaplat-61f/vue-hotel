@@ -8,17 +8,13 @@ const state = {
   direction: 'forward',
   isShowFotter: true,
   headerConfig: {
-    backText: '返回',
-    showBack: true,
     title: '',
-    backUrl: '/',
-    showMsgtip: false,
-    showRight: false,
-    paddingTop: '45px',
-    rightType: 'appendProxy'
+    topTitle: '',
+    showRight: false
   },
   user: {},
-  system: {}
+  system: {},
+  room: {}
 }
 export default new Vuex.Store({
   state,
@@ -46,6 +42,9 @@ export default new Vuex.Store({
       for(let key in payload) {
         state.system[key] = payload[key]
       }
+    },
+    UPDATE_ROOM (state, payload) {
+      state.room = payload.room
     }
   }
 })

@@ -1,25 +1,17 @@
 <template>
   <div class="fotter">
     <tabbar>
+      <tabbar-item link="/Order" :selected="route.path === '/Order'">
+        <!-- <img slot="icon" src="../../images/icon/home.png"> -->
+        <span slot="label" class="label"><i class="fa fa-book"></i>我的订单</span>
+      </tabbar-item>
       <tabbar-item link="/" :selected="route.path === '/'">
-        <img slot="icon" src="../../images/icon/home.png">
-        <span slot="label">首页</span>
+        <!-- <img slot="icon" src="../../images/icon/statistics.png"> -->
+        <span slot="label" class="label"><i class="fa fa-jpy"></i>继续预订</span>
       </tabbar-item>
-      <tabbar-item link="/Statistics" :selected="route.path === '/Statistics'">
-        <img slot="icon" src="../../images/icon/statistics.png">
-        <span slot="label">统计</span>
-      </tabbar-item>
-      <tabbar-item show-dot link="/proxy" :selected="route.path === '/proxy'">
-        <img slot="icon" src="../../images/icon/proxy.png">
-        <span slot="label">代理</span>
-      </tabbar-item>
-      <tabbar-item show-dot link="/msg" :selected="route.path === '/msg'">
-        <img slot="icon" src="../../images/icon/message.png">
-        <span slot="label">消息</span>
-      </tabbar-item>
-      <tabbar-item link="/profile" :selected="route.path === '/profile'">
-        <img slot="icon" src="../../images/icon/profile.png">
-        <span slot="label">我的</span>
+      <tabbar-item show-dot link="/" :selected="route.path === '/'">
+        <!-- <img slot="icon" src="../../images/icon/proxy.png"> -->
+        <span slot="label" class="label"><i class="fa fa-home"></i>酒店位置</span>
       </tabbar-item>
     </tabbar>
   </div>
@@ -48,3 +40,24 @@
     }
   }
 </script>
+
+<style scoped>
+/* .weui-tabbar {
+  background: #F2F2EE !important;
+} */
+
+.label {
+  background: #F2F2EE;
+  display: block;
+  color: #000;
+  font-size: .7rem;
+  border: 1px solid #C9CABF;
+  height: 48px;
+}
+
+.label i {
+  color: #DB905C;
+  margin-right: .2rem;
+}
+</style>
+
