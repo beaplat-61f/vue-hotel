@@ -34,11 +34,11 @@
         </tab>
         <div class="list" v-if="showList" :key="showList">
           <div class="calendar">
-            <p>
+            <p @click="$router.push('/SelectCalendar')">
               <span style="display: block; float: left; padding-top: .2rem"><img src="../../assets/images/icon_HS_date.png" alt=""></span>
-              <span>入住08月03日</span>
-              <span>离店08月04日</span>
-              <span class="total">（共1天）</span>
+              <span>入住</span><span v-text="dateFilter.begin"></span>
+              <span>离店</span><span v-text="dateFilter.end"></span>
+              <span class="total">（共<span v-text="dateFilter.total_day"></span>天）</span>
             </p>
           </div>
           <div class="title">
@@ -91,7 +91,7 @@
   </div>
 </template>
 <script>
-  import {Group, Cell, Tab, TabItem, InlineCalendar, XButton} from 'vux'
+  import {Group, Cell, Tab, TabItem, InlineCalendar, XButton, dateFormat} from 'vux'
   import {mapMutations, mapState} from 'vuex'
   import {rooms, hotel} from '@/mock/mock'
 
@@ -113,8 +113,16 @@
     },
     computed: {
       ...mapState ({
-        system: state => state.system
-      })
+        system: state => state.system,
+        order: state => state.order
+      }),
+      dateFilter() {
+        return {
+          begin: dateFormat(this.order.begin, 'MM月DD日'),
+          end: dateFormat(this.order.end, 'MM月DD日'),
+          total_day: this.order.total_day
+        }
+      }
     },
     mounted () {
       this.initHeader ()
@@ -136,7 +144,7 @@
       },
       initHotel () {
         this.$axios.get ('http://hotel.cn').then (response => {
-          console.log(response.data)
+//          console.log(response.data)
           this.hotel = response.data
           this.updateSystem({'phone': this.hotel.phone})
         }).catch (error => {

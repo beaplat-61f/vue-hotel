@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {dateFormat} from 'vux'
 
 Vue.use(Vuex)
 
+let now = new Date(dateFormat(new Date(), 'YYYY/MM/DD').split('/'))
+
 const state = {
   isLoading: false,
-  direction: 'forward',
   isShowFotter: true,
   headerConfig: {
     title: '',
@@ -14,16 +16,18 @@ const state = {
   },
   user: {},
   system: {},
-  room: {}
+  room: {},
+  order: {
+    begin: now,
+    end: new Date((new Date()).setDate(now.getDate()+1)),
+    total_day: 1
+  }
 }
 export default new Vuex.Store({
   state,
   mutations: {
     UPDATE_LOADING (state, payload) {
       state.isLoading = payload.isLoading
-    },
-    UPDATE_DIRECTION (state, payload) {
-      state.direction = payload.direction
     },
     UPDATE_SHOW_FOTTER (state, payload) {
       state.isShowFotter = payload.isShowFotter
@@ -45,6 +49,11 @@ export default new Vuex.Store({
     },
     UPDATE_ROOM (state, payload) {
       state.room = payload.room
+    },
+    UPDATE_ORDER (state, payload) {
+      for(let key in payload) {
+        state.order[key] = payload[key]
+      }
     }
   }
 })
