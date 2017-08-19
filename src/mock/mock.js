@@ -20,13 +20,30 @@ let rooms = Mock.mock ('http://rooms.cn', {
   'info': {
     'detailed|100': '@cword',
     'locationImg': '@image',
-    'location': '@area' + '@region'
+    'location': '@area@region'
   }
 })
 
 let system = Mock.mock ('http://system.cn', {
-  'remark|200': '@cword',
+  'remark': '@cparagraph',
   'phone': '400-888-2888'
+})
+
+
+let hotel = Mock.mock ('http://hotel.cn', {
+  'name': '维也纳酒店',
+  'nickname': '@region',
+  'img': '@image',
+  'address': 'xxx市xxx区xxx街道xxx号',
+  'phone': '400-888-2888',
+  'services': {
+    'isE': '@boolean',
+    'isI': '@boolean',
+    'isP': '@boolean',
+    'isR': '@boolean',
+    'isS': '@boolean',
+    'isW': '@boolean'
+  }
 })
 
 let user = Mock.mock ('http://user.cn', {
@@ -34,4 +51,4 @@ let user = Mock.mock ('http://user.cn', {
 })
 
 
-export {rooms, system, user}
+export {rooms, system, hotel, user}

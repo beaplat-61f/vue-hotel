@@ -9,6 +9,16 @@ a {
   cursor: pointer;
 }
 
+.color-green {
+  color: #09bb07;
+}
+
+.title_ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .border-1px-r {
   border-right: 1px solid #fff;
 }
@@ -99,21 +109,21 @@ a {
 }
 
 .weui-cells {
-  margin-top: .5rem !important;
+  margin-top: 0 !important;
   font-size: .9rem !important;
 }
 
 .weui-cell:before {
   right: .75rem !important;
-  border-top: 1px solid #ebebeb !important;
+  border-top: 2px solid #E0E0E0 !important;
 }
 
 .weui-cells:before {
-  border-top: 1px solid #ebebeb !important;
+  border-top: 2px solid #E0E0E0 !important;
 }
 
 .weui-cells:after {
-  border-bottom: 1px solid #ebebeb !important;
+  border-bottom: 2px solid #E0E0E0 !important;
 }
 
 .vux-timeline {
@@ -160,23 +170,43 @@ a {
   background-color: rgba(255,255,255,0) !important;
 }
 
-
-
-/*@media (max-width: 320px) {
-  html {
-    font-size: 20px;
-  }
+.order-pay .weui-panel:before,
+.order-pay .weui-cells:before {
+  border-top: none !important;
 }
 
-@media (min-width: 321px) and (max-width: 767px) {
-  html {
-    font-size: 23px;
-  }
+.order-info .weui-panel:before,
+.order-info .weui-cells:before {
+  border-top: none !important;
+}
+
+.order-pay .weui-panel:after,
+.order-pay .weui-cells:after {
+  border-bottom: none !important;
+}
+
+.order-info .weui-panel:before,
+.order-info .weui-cells:before {
+  border-bottom: none !important;
+}
+
+.order-info .footer .weui-cells {
+  background-color: inherit !important;
+}
+
+.order-info-dialog .weui-dialog__hd {
+  text-align: left !important;
+}
+
+.order-info .weui-cell {
+  min-height: 2rem;
+  padding: 0 .7rem;
+}
+
+.order-info .weui-cell .title {
+  padding: .4rem 0;
 }
 
 
-@media (min-width: 768px) and (max-width: 991px) {
-  html {
-    font-size: 30px;
-  }
-}*/
+
+

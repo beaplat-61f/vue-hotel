@@ -8,7 +8,8 @@
                     </div>
                     <div class="calendar">
                         <p>
-                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <!--<i class="fa fa-calendar" aria-hidden="true"></i>-->
+                            <span style="display: block; float: left; padding-top: .2rem; margin-right: .1rem;"><img style="width: .9rem;" src="../../assets/images/icon_HS_date.png" alt=""></span>
                             <span>入住08月03日</span>
                             <span>离店08月04日</span>
                             <span class="total">（共1天）</span>
@@ -117,7 +118,7 @@ export default {
         },
         submit() {
             this.updateRoom({room: this.room})
-            this.$router.push('/OrderInfo')
+            this.$router.push('/OrderPay')
         }
     }
 }
@@ -131,7 +132,6 @@ export default {
 
 .fill-order {
     background: #E5E5E5;
-    height: 100%;
 }
 
 .calendar {
@@ -199,7 +199,7 @@ export default {
 }
 
 .tip {
-    background: #E5E5E5; 
+    background: #E5E5E5;
 }
 
 .tip .icon {
@@ -213,7 +213,6 @@ export default {
 
 .submit {
     background-color: #fff;
-    margin-bottom: 3rem;
 }
 
 .submit span strong {

@@ -8,7 +8,7 @@
     <view-box ref="viewBox" body-padding-top="100px" body-padding-bottom="50px" :key="key">
       <topbar slot="header" :title="headerConfig.title" :topTitle="headerConfig.topTitle">
         <a class="header-right" slot="rightContent" v-if="headerConfig.showRight" :href="'tel://'+system.phone">
-          <i class="fa fa-phone"></i><span>电话</span>
+          <span class="icon-span"><img src="./assets/images/icon_o_phone.png" alt=""></span><span>电话</span>
         </a>
       </topbar>
       <router-view :key="key"></router-view>
@@ -19,7 +19,7 @@
 
 <script>
   import {ViewBox, Loading, TransferDomDirective as TransferDom} from 'vux'
-  import topbar from './components/header/header'
+  import topbar from './components/header/header.vue'
   import bar from './components/footer/footer.vue'
   import {mapState} from 'vuex'
 
@@ -78,11 +78,17 @@
     color: #DF734B !important;
   }
 
-  .header-right i {
-    margin-right: .2rem;
+  .header-right .icon-span {
+    display: block;
+    float: left;
+    padding-top: .1rem;
+  }
+
+  .header-right .icon-span img {
+    width: .8rem;
   }
 
   .header-right span {
-    font-size: .9rem;
+    font-size: .7rem;
   }
 </style>

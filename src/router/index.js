@@ -11,6 +11,10 @@ const BookHotel = resolve => require (['@/page/book/BookHotel'], resolve)
 const Order = resolve => require (['@/page/book/Order'], resolve)
 // 填写订单
 const FillOrder = resolve => require (['@/page/book/FillOrder'], resolve)
+// 请选入住日期
+const SelectCalendar = resolve => require (['@/page/book/SelectCalendar'], resolve)
+// 订单支付
+const OrderPay = resolve => require (['@/page/book/OrderPay'], resolve)
 // 订单详情
 const OrderInfo = resolve => require (['@/page/book/OrderInfo'], resolve)
 // 404页面
@@ -37,6 +41,16 @@ export default new Router({
       path: '/OrderInfo',
       name: 'OrderInfo',
       component: OrderInfo
+    },
+    {
+      path: '/OrderPay',
+      name: 'OrderPay',
+      component: OrderPay
+    },
+    {
+      path: '/SelectCalendar',
+      name: 'SelectCalendar',
+      component: SelectCalendar
     }
   ]
 })
