@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7fdd029c-3a28-4ca9-97bb-4506b6d3f83f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/calendar/calendar.vue" afterPath="$PROJECT_DIR$/src/components/calendar/calendar.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mock/mock.js" afterPath="$PROJECT_DIR$/src/mock/mock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/book/BookHotel.vue" afterPath="$PROJECT_DIR$/src/page/book/BookHotel.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/book/FillOrder.vue" afterPath="$PROJECT_DIR$/src/page/book/FillOrder.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/book/OrderInfo.vue" afterPath="$PROJECT_DIR$/src/page/book/OrderInfo.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/book/OrderPay.vue" afterPath="$PROJECT_DIR$/src/page/book/OrderPay.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vuex/store.js" afterPath="$PROJECT_DIR$/src/vuex/store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/book/Order.vue" afterPath="$PROJECT_DIR$/src/page/book/Order.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/src/mock/mock.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="6" />
+              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -70,13 +64,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderInfo.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrderInfo.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/book/OrderInfo.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
               <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding>
                 <element signature="e#2742#2785#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Order.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/book/Order.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#p#5;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#3468#3536#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,16 +122,6 @@
               <folding>
                 <element signature="e#545#575#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calendar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/calendar/calendar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7110">
-              <caret line="395" column="13" lean-forward="false" selection-start-line="395" selection-start-column="2" selection-end-line="395" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -169,7 +167,6 @@
         <option value="$PROJECT_DIR$/config/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/style/base.css" />
-        <option value="$PROJECT_DIR$/src/page/book/Order.vue" />
         <option value="$PROJECT_DIR$/src/components/calendar/calendar.js" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/router/index.js" />
@@ -178,10 +175,11 @@
         <option value="$PROJECT_DIR$/src/page/book/BookHotel.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/vuex/store.js" />
-        <option value="$PROJECT_DIR$/src/mock/mock.js" />
         <option value="$PROJECT_DIR$/src/page/book/OrderPay.vue" />
         <option value="$PROJECT_DIR$/src/page/book/FillOrder.vue" />
         <option value="$PROJECT_DIR$/src/page/book/OrderInfo.vue" />
+        <option value="$PROJECT_DIR$/src/mock/mock.js" />
+        <option value="$PROJECT_DIR$/src/page/book/Order.vue" />
       </list>
     </option>
   </component>
@@ -328,7 +326,7 @@
       <updated>1503038267562</updated>
       <workItem from="1503038268823" duration="9968000" />
       <workItem from="1503115837791" duration="31245000" />
-      <workItem from="1503199680791" duration="4516000" />
+      <workItem from="1503199680791" duration="8543000" />
     </task>
     <task id="LOCAL-00001" summary="update awesome's location">
       <created>1503038954481</created>
@@ -379,11 +377,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503158150403</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="mock data">
+      <created>1503205178688</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1503205178688</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45729000" />
+    <option name="totallyTimeSpent" value="49756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="258" y="48" width="1918" height="866" extended-state="6" />
@@ -420,7 +425,8 @@
     <MESSAGE value="对ie9以下版本的ie浏览器进行提示" />
     <MESSAGE value="add calendar" />
     <MESSAGE value="all change" />
-    <option name="LAST_COMMIT_MESSAGE" value="all change" />
+    <MESSAGE value="mock data" />
+    <option name="LAST_COMMIT_MESSAGE" value="mock data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,7 +479,7 @@
           <caret line="69" column="47" lean-forward="false" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#2817#2873#0" expanded="true" />
+            <element signature="e#3468#3536#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -499,7 +505,7 @@
         <state relative-caret-position="306">
           <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding>
-            <element signature="e#734#807#0" expanded="true" />
+            <element signature="e#734#807#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,7 +587,7 @@
         <state relative-caret-position="936">
           <caret line="82" column="16" lean-forward="false" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
           <folding>
-            <element signature="e#734#807#0" expanded="true" />
+            <element signature="e#734#807#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -640,17 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/book/Order.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="69" column="47" lean-forward="false" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#2817#2873#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -664,7 +659,7 @@
         <state relative-caret-position="306">
           <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding>
-            <element signature="e#734#807#0" expanded="true" />
+            <element signature="e#734#807#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,14 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/book/BookHotel.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -720,14 +707,6 @@
             <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#group#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#3986#4068#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mock/mock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,6 +746,34 @@
           <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
           <folding>
             <element signature="e#2742#2785#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mock/mock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/book/Order.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#p#5;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#3468#3536#0" expanded="true" />
           </folding>
         </state>
       </provider>

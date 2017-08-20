@@ -33,26 +33,32 @@
       </timeline>-->
     </div>
     <div style="position: absolute; z-index: 200;">
-      <div class="info">
+      <div class="info" v-for="(item, index) in ordersFilter" :key="index">
         <div class="time">
           <span>04/10</span>
         </div>
         <div class="dots"></div>
         <div class="content">
           <div class="bg">
-            <p class="nickname title_ellipsis">广州科学城店</p>
-            <p class="title_ellipsis">入住2017年10月04日</p>
-            <p class="title_ellipsis">离店2017年10月05日</p>
-            <p class="title_ellipsis">雅致双人房 房间数：1</p>
-            <p class="title_ellipsis"><span><img src="../../assets/images/icon_o_phone.png" alt=""></span>020-82512666
+            <p class="nickname title_ellipsis" v-text="item.nickname+'店'">广州科学城店</p>
+            <p class="title_ellipsis" v-text="'入住'+item.beginStr">入住2017年10月04日</p>
+            <p class="title_ellipsis" v-text="'离店'+item.endStr">离店2017年10月05日</p>
+            <p class="title_ellipsis"><span v-text="item.type">雅致双人房</span> 房间数：<span v-text="item.roomNum">1</span></p>
+            <p class="title_ellipsis"><span><img src="../../assets/images/icon_o_phone.png" alt=""></span><span
+              v-text="item.phone">020-82512666</span>
             </p>
-            <p class="title_ellipsis"><span><img src="../../assets/images/icon_o_location.png" alt=""></span>广州市黄埔区开创大道3327号
+            <p class="title_ellipsis" :class="{'location': item.status=='未入住'}"><span><img
+              src="../../assets/images/icon_o_location.png" alt=""><i
+              style="font-style: normal; font-size: .7rem !important;" v-text="item.address">广州市黄埔区开创大道3327号</i></span>
             </p>
-            <img class="label-tip" src="../../assets/images/icon_orderState_cancel.png" alt="">
+            <p class="offer color-green" v-if="item.status=='未入住'">立即支付</p>
+            <img v-if="item.status=='未入住'" class="label-tip" src="../../assets/images/icon_orderState_checking.png"
+                 alt="">
+            <img v-if="item.status=='取消'" class="label-tip" src="../../assets/images/icon_orderState_cancel.png" alt="">
           </div>
         </div>
       </div>
-      <div class="info" style="">
+      <!--<div class="info" style="">
         <div class="time">
           <span>04/10</span>
         </div>
@@ -71,22 +77,35 @@
             <img class="label-tip" src="../../assets/images/icon_orderState_checking.png" alt="">
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
 
   </div>
 </template>
 
 <script>
-  import {Timeline, TimelineItem, Tab, TabItem} from 'vux'
+  import {Timeline, TimelineItem, Tab, TabItem, dateFormat} from 'vux'
   import {mapMutations} from 'vuex'
+  import {orders} from '@/mock/mock'
 
   export default {
     name: 'order',
     data () {
       return {
         headerTitle: '我的订单',
-        tabIndex: 0
+        tabIndex: 0,
+        orders: []
+      }
+    },
+    computed: {
+      ordersFilter () {
+        this.orders.forEach ((v) => {
+          v.dateStr = dateFormat (v.date, 'MM/DD')
+          v.beginStr = dateFormat (v.begin, 'YYYY年MM月DD日')
+          v.endStr = dateFormat (v.end, 'YYYY年MM月DD日')
+        })
+
+        return this.orders
       }
     },
     components: {
@@ -105,10 +124,18 @@
       },
       changeTab (index) {
         this.tabIndex = index
+      },
+      initOrders () {
+        this.$axios.get ('http://orders.cn').then (response => {
+          this.orders = response.data.datas
+        }).catch (error => {
+
+        })
       }
     },
     mounted () {
       this.initHeader ()
+      this.initOrders ()
     }
   }
 </script>

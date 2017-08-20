@@ -9,10 +9,17 @@ Random.extend ({
   }
 })
 
+Random.extend ({
+  status: function (date) {
+    let list = ['未入住', '已入住', '取消']
+    return this.pick (list)
+  }
+})
+
 let rooms = Mock.mock ('http://rooms.cn', {
   'datas|5': [{
     'type': '@roomType',
-    'retail': Random.integer(338, 438),
+    'retail': Random.integer (338, 438),
     'rebate': 0.85,
     'tip': '预付立减20元',
     'isFull': '@boolean',
@@ -54,4 +61,18 @@ let user = Mock.mock ('http://user.cn', {
 })
 
 
-export {rooms, system, hotel, user}
+let orders = Mock.mock ('http://orders.cn', {
+  'datas|1-10': [{
+    'status': '@status',
+    'nickname': '@region',
+    'begin': '@now',
+    'end': '@date',
+    'type': '@roomType',
+    'roomNum': '1',
+    'phone': '400-888-2888',
+    'address': 'xxx市xxx区xxx街道xxx号',
+    'date': '@date'
+  }]
+})
+
+export {rooms, system, hotel, user, orders}
