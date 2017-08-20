@@ -25,14 +25,14 @@
         <div slot="content" class="tips">
           <p>亲，您的订单信息如下：</p>
           <p>订单号：W20170817095316105981915113001</p>
-          <p>酒店名：广州增城新塘港口大道店</p>
-          <p>最晚入住：10-25</p>
-          <p>最晚退房：10-26</p>
-          <p>房间数：1</p>
-          <p>金额：219.00元</p>
-          <p>电话：202-32860888</p>
-          <p>传真：020-32860882</p>
-          <p>地址：广州省广州市增城区新塘镇港口大道325号</p>
+          <p v-text="'酒店名：'+hotel.nickname+'店'">酒店名：广州增城新塘港口大道店</p>
+          <p v-text="'最晚入住：'+dateFilter.begin">最晚入住：10-25</p>
+          <p v-text="'最晚退房：'+dateFilter.end">最晚退房：10-26</p>
+          <p v-text="'房间数：'+order.roomNum">房间数：1</p>
+          <p v-text="'金额：'+order.total">金额：219.00元</p>
+          <p v-text="'电话：'+hotel.phone">电话：202-32860888</p>
+          <p v-text="'传真：'+hotel.fax">传真：020-32860882</p>
+          <p v-text="'地址：'+hotel.address">地址：广州省广州市增城区新塘镇港口大道325号</p>
         </div>
         <div slot="footer" class="footer">
           <div class="tip">
@@ -51,7 +51,7 @@
 
 <script>
   import {mapMutations, mapState} from 'vuex'
-  import {Group, Cell, Card, XButton} from 'vux'
+  import {Group, Cell, Card, XButton, dateFormat} from 'vux'
 
   export default {
     name: 'order-pay',
@@ -66,8 +66,17 @@
     computed: {
       ...mapState ({
         room: state => state.room,
-        system: state => state.system
-      })
+        system: state => state.system,
+        order: state => state.order,
+        hotel: state => state.hotel
+      }),
+      dateFilter() {
+        return {
+          begin: dateFormat (this.order.begin, 'MM-DD'),
+          end: dateFormat (this.order.end, 'MM-DD'),
+          total_day: this.order.total_day
+        }
+      }
     },
     mounted () {
       this.initHeader ()

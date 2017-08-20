@@ -4,7 +4,8 @@
       <group>
         <cell>
           <div slot="title" class="title">
-            <p class="title_ellipsis"><strong>维也纳酒店（广州增城新塘港口大道店）</strong></p>
+            <p class="title_ellipsis"><strong v-text="hotel.name+'('+hotel.nickname+'店)'">维也纳酒店（广州增城新塘港口大道店）</strong>
+            </p>
           </div>
         </cell>
         <cell is-link>
@@ -12,7 +13,7 @@
             <img src="../../assets/images/icon_o_location.png" alt="">
           </div>
           <div slot="title" class="title">
-            <p class="title_ellipsis">广东省广州市增城区新塘镇港口大道325号</p>
+            <p class="title_ellipsis" v-text="hotel.address">广东省广州市增城区新塘镇港口大道325号</p>
           </div>
         </cell>
         <cell is-link>
@@ -20,7 +21,7 @@
             <img src="../../assets/images/icon_o_phone.png" alt="">
           </div>
           <div slot="title" class="title">
-            <p class="title_ellipsis">门店电话：020-32860888</p>
+            <p class="title_ellipsis" v-text="'门店电话：'+hotel.phone">门店电话：020-32860888</p>
           </div>
         </cell>
       </group>
@@ -30,22 +31,23 @@
         <cell>
           <div slot="title" class="title">
             <p class="title_ellipsis">订单号：W20170817095316105981915113001</p>
-            <p class="title_ellipsis">房型：标准单人房 <span class="color-green">1间房</span></p>
-            <p class="title_ellipsis">入住：10-25 <span class="brackets">}</span><span class="prompt color-green">住1晚</span></p>
-            <p class="title_ellipsis">离店：10-26</p>
-            <p class="title_ellipsis">到点时间：15:00前</p>
+            <p class="title_ellipsis"><span v-text="'房型：'+room.type">房型：标准单人房</span> <span class="color-green" v-text="order.roomNum+'间房'">1间房</span></p>
+            <p class="title_ellipsis"><span v-text="'入住：'+dateFilter.begin">入住：10-25</span> <span class="brackets">}</span><span
+              class="prompt color-green" v-text="'住'+order.total_day+'晚'">住1晚</span></p>
+            <p class="title_ellipsis" v-text="'离店：'+dateFilter.end">离店：10-26</p>
+            <p class="title_ellipsis" v-text="'到店时间：'+order.arrivalTime+'前'">到店时间：15:00前</p>
           </div>
         </cell>
         <cell>
           <div slot="title" class="title">
-            <p>联系人：林生</p>
-            <p>手机：159XXXX0100</p>
-            <p class="remark">备注：</p>
+            <p v-text="'联系人：'+user.name">联系人：林生</p>
+            <p v-text="'手机：'+user.phone">手机：159XXXX0100</p>
+            <p class="remark" v-text="'备注：'+order.remark">备注：</p>
           </div>
         </cell>
         <cell>
           <div slot="title" class="title">
-            <p class="total">总价<span>￥219.00</span></p>
+            <p class="total">总价<span>￥</span><span v-text="order.total">219.00</span></p>
           </div>
         </cell>
       </group>
@@ -62,8 +64,8 @@
     </div>
     <div v-transfer-dom class="order-info-dialog">
       <confirm v-model="show"
-      ref="confirm"
-      title="提示"
+               ref="confirm"
+               title="提示"
       >
         <p><i class="fa fa-question-circle-o"></i>你确定要取消该订单吗？</p>
       </confirm>
@@ -73,7 +75,7 @@
 
 <script>
   import {mapMutations, mapState} from 'vuex'
-  import {Group, Cell, Card, Confirm, XButton, TransferDomDirective as TransferDom} from 'vux'
+  import {Group, Cell, Card, Confirm, XButton, TransferDomDirective as TransferDom, dateFormat} from 'vux'
 
   export default {
     name: 'order-info',
@@ -92,8 +94,18 @@
     computed: {
       ...mapState ({
         room: state => state.room,
-        system: state => state.system
-      })
+        system: state => state.system,
+        hotel: state => state.hotel,
+        order: state => state.order,
+        user: state => state.user
+      }),
+      dateFilter () {
+        return {
+          begin: dateFormat (this.order.begin, 'MM-DD'),
+          end: dateFormat (this.order.end, 'MM-DD'),
+          total_day: this.order.total_day
+        }
+      }
     },
     mounted () {
       this.initHeader ()

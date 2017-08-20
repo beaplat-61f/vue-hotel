@@ -22,6 +22,13 @@ axios.get ('http://system.cn').then (response => {
   console.log (error)
 })
 
+axios.get ('http://user.cn').then (response => {
+  console.log(response.data)
+  store.commit ('UPDATE_USER', response.data)
+}).catch (error => {
+  console.log (error)
+})
+
 sync (store, router)
 router.beforeEach (function (to, from, next) {
   store.commit ('UPDATE_LOADING', {isLoading: true})

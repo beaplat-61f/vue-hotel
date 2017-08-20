@@ -36,6 +36,7 @@ let hotel = Mock.mock ('http://hotel.cn', {
   'img': '@image',
   'address': 'xxx市xxx区xxx街道xxx号',
   'phone': '400-888-2888',
+  'fax': '400-888-2890',
   'services': {
     'isE': '@boolean',
     'isI': '@boolean',
@@ -47,7 +48,9 @@ let hotel = Mock.mock ('http://hotel.cn', {
 })
 
 let user = Mock.mock ('http://user.cn', {
-
+  name: '@cname',
+  phone: /^1[3458][0-9]\d{8}$/,
+  isMember: '@boolean'
 })
 
 

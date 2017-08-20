@@ -132,6 +132,7 @@
     methods: {
       ...mapMutations ({
         updateHeader: 'UPDATE_HEADER',
+        updateHotel: 'UPDATE_HOTEL',
         updateRoom: 'UPDATE_ROOM',
         updateSystem: 'UPDATE_SYSTEM'
       }),
@@ -164,8 +165,9 @@
         })
       },
       book (item) {
-        console.log (item)
+        console.log (item, this.hotel)
         this.updateRoom ({room: item})
+        this.updateHotel ({hotel: this.hotel})
         this.$router.push ('/FillOrder')
       }
     }

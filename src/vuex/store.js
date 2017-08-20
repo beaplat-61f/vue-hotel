@@ -16,6 +16,7 @@ const state = {
   },
   user: {},
   system: {},
+  hotel: {},
   room: {},
   order: {
     begin: now,
@@ -46,6 +47,9 @@ export default new Vuex.Store({
       for(let key in payload) {
         state.system[key] = payload[key]
       }
+    },
+    UPDATE_HOTEL (state, payload) {
+      state.hotel = payload.hotel
     },
     UPDATE_ROOM (state, payload) {
       state.room = payload.room

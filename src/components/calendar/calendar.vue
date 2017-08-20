@@ -52,6 +52,7 @@
 
 <script>
   import calendar from './calendar.js'
+
   export default {
     props: {
       value: {
@@ -102,6 +103,7 @@
           return {}
         }
       },
+      now: new Date()
     },
     data() {
       return {
@@ -324,6 +326,7 @@
       // 上月
       prev(e) {
         e.stopPropagation()
+
         if (this.month == 0) {
           this.month = 11
           this.year = parseInt(this.year) - 1
