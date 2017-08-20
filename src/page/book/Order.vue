@@ -105,7 +105,14 @@
           v.endStr = dateFormat (v.end, 'YYYY年MM月DD日')
         })
 
-        return this.orders
+        switch(this.tabIndex) {
+          case 0: return this.orders
+          case 1: return this.filter('未入住')
+          case 2: return this.filter('已入住')
+          case 3: return this.filter('取消')
+        }
+
+
       }
     },
     components: {
@@ -130,6 +137,11 @@
           this.orders = response.data.datas
         }).catch (error => {
 
+        })
+      },
+      filter(type) {
+        return this.orders.filter((v)=>{
+          return v.status == type
         })
       }
     },
@@ -187,7 +199,7 @@
     float: left;
     position: absolute;
     left: 15%;
-    margin-left: -0.2rem;
+    margin-left: -0.1rem;
     margin-top: .4rem;
   }
 
@@ -200,6 +212,7 @@
   }
 
   .info .content .bg {
+    min-width: 11.5rem;
     width: 95%;
     height: 95%;
     margin: 0 auto;
