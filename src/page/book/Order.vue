@@ -33,7 +33,7 @@
       </timeline>-->
     </div>
     <div style="position: absolute; z-index: 200;">
-      <div class="info" v-for="(item, index) in ordersFilter" :key="index">
+      <div class="info" :style="{'width': width+'px'}" v-for="(item, index) in ordersFilter" :key="index">
         <div class="time">
           <span>04/10</span>
         </div>
@@ -111,8 +111,9 @@
           case 2: return this.filter('已入住')
           case 3: return this.filter('取消')
         }
-
-
+      },
+      width() {
+        return document.body.clientWidth
       }
     },
     components: {
@@ -199,7 +200,7 @@
     float: left;
     position: absolute;
     left: 15%;
-    margin-left: -0.1rem;
+    margin-left: -0.2rem;
     margin-top: .4rem;
   }
 
