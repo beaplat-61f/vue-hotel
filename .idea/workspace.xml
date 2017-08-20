@@ -324,7 +324,7 @@
       <updated>1503038267562</updated>
       <workItem from="1503038268823" duration="9968000" />
       <workItem from="1503115837791" duration="31245000" />
-      <workItem from="1503199680791" duration="11147000" />
+      <workItem from="1503199680791" duration="11159000" />
     </task>
     <task id="LOCAL-00001" summary="update awesome's location">
       <created>1503038954481</created>
@@ -396,11 +396,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503215469198</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="change timeline">
+      <created>1503216110352</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1503216110352</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52360000" />
+    <option name="totallyTimeSpent" value="52372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="258" y="48" width="1918" height="866" extended-state="6" />
