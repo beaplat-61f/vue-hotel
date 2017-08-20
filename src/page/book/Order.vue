@@ -32,7 +32,7 @@
         </timeline-item>
       </timeline>-->
     </div>
-    <div style="position: absolute; z-index: 200;">
+    <div style="position: absolute; z-index: 200; padding-bottom: 1.5rem;">
       <div class="info" :style="{'width': width+'px'}" v-for="(item, index) in ordersFilter" :key="index">
         <div class="time">
           <span>04/10</span>
