@@ -4,7 +4,8 @@ import {dateFormat} from 'vux'
 
 Vue.use(Vuex)
 
-let now = new Date(dateFormat(new Date(), 'YYYY/MM/DD').split('/'))
+let now = new Date(),
+    next = now.getTime()+(1000*60*60*24)
 
 const state = {
   isLoading: false,
@@ -20,7 +21,7 @@ const state = {
   room: {},
   order: {
     begin: now,
-    end: new Date((new Date()).setDate(now.getDate()+1)),
+    end: new Date(next),
     total_day: 1
   }
 }
