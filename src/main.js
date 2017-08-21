@@ -6,7 +6,7 @@ import router from './router'
 import {sync} from 'vuex-router-sync'
 import store from './vuex/store'
 import axios from 'axios'
-import {system} from './mock/mock'
+import {system, user} from './mock/mock'
 import './style/base.css'
 import App from './App'
 
