@@ -34,10 +34,10 @@
         </tab>
         <div class="list" v-if="showList" :key="showList">
           <div class="calendar">
-            <p @click="$router.push('/SelectCalendar')">
+            <p>
               <span style="display: block; float: left; padding-top: .2rem"><img src="../../assets/images/icon_HS_date.png" alt=""></span>
-              <span>入住</span><span v-text="dateFilter.begin"></span>
-              <span>离店</span><span v-text="dateFilter.end"></span>
+              <span>入住</span><span @click="$router.push('/SelectCalendar/入住')" v-text="dateFilter.begin"></span>
+              <span>离店</span><span @click="$router.push('/SelectCalendar/离店')" v-text="dateFilter.end"></span>
               <span class="total">（共<span v-text="dateFilter.total_day"></span>天）</span>
             </p>
           </div>
@@ -147,7 +147,7 @@
         this.$axios.get ('http://hotel.cn').then (response => {
 //          console.log(response.data)
           this.hotel = response.data
-          this.updateSystem({'phone': this.hotel.phone})
+          this.updateHotel ({hotel: this.hotel})
         }).catch (error => {
           console.log (error)
         })
@@ -167,7 +167,6 @@
       book (item) {
         console.log (item, this.hotel)
         this.updateRoom ({room: item})
-        this.updateHotel ({hotel: this.hotel})
         this.$router.push ('/FillOrder')
       }
     }
