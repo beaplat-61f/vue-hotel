@@ -42,7 +42,7 @@ let hotel = Mock.mock ('http://hotel.cn', {
   'nickname': '@region',
   'img': '@image',
   'address': 'xxx市xxx区xxx街道xxx号',
-  'phone': '400-888-2888',
+  'phone': '020-31128088',
   'fax': '400-888-2890',
   'services': {
     'isE': '@boolean',
