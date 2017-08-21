@@ -48,7 +48,7 @@ export default new Router({
       component: OrderPay
     },
     {
-      path: '/SelectCalendar',
+      path: '/SelectCalendar/:type',
       name: 'SelectCalendar',
       component: SelectCalendar
     }
