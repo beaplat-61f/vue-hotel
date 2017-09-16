@@ -15,6 +15,12 @@ FastClick.attach(document.body)
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
+// 调用后台接口
+axios.get ('http://139.196.174.209:9005/wap/hotel/basicInfo?appId=1&version=1.0&sign=dc1785047d723694c92f3a55732f7d6e&hotelId=ec858cbd9f2148df9720be1ae20db06d').then (response => {
+  console.log(response.data)
+}).catch (error => {
+  console.log (error)
+})
 
 axios.get ('http://system.cn').then (response => {
   store.commit ('UPDATE_SYSTEM', response.data)
