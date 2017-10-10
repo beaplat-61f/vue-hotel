@@ -5,7 +5,7 @@
         <loading v-model="isLoading"></loading>
       </div>
     </div>
-    <view-box ref="viewBox" body-padding-top="100px" body-padding-bottom="50px" :key="key">
+    <view-box ref="viewBox" :body-padding-top="bodyPaddingTop" body-padding-bottom="50px" :key="key">
       <topbar slot="header" :title="headerConfig.title" :topTitle="headerConfig.topTitle">
         <a class="header-right" slot="rightContent" v-if="headerConfig.showRight" @click="showPhones=!showPhones">
           <span class="icon-span"><img src="./assets/images/icon_o_phone.png" alt=""></span><span>电话</span>
@@ -44,12 +44,17 @@
         headerConfig: state => state.headerConfig,
         isLoading: state => state.isLoading,
         system: state => state.system,
-        hotel: state => state.hotel
+        hotel: state => state.hotel,
+        showMsgtip: state => state.isShowMsgtip
       }),
       key () {
         let now = new Date ()
         console.log (this.$route.path + '-' + now.getTime ())
         return this.$route.path + '-' + now.getTime ()
+      },
+      bodyPaddingTop() {
+        console.log(this.showMsgtip)
+        return this.showMsgtip ? "100px" : "50px"
       }
     },
     directives: {

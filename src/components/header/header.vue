@@ -17,27 +17,31 @@
 
 <script>
 import { XHeader, TransferDom } from 'vux'
+import {mapMutations, mapState} from 'vuex'
 
 export default {
   name: 'topbar',
-  data() {
-    return {
-      showMsgtip: true
-    }
-  },
   directives: {
     TransferDom
   },
   components: {
     XHeader
   },
+  computed: {
+    ...mapState ({
+      showMsgtip: state => state.isShowMsgtip
+    })
+  },
   props: ['title', 'topTitle'],
   methods: {
+    ...mapMutations ({
+      updateShowMsgtip: 'UPDATE_SHOW_MSGTIP'
+    }),
     goBack() {
       this.$router.go(-1)
     },
     closeMsg() {
-      this.showMsgtip = !this.showMsgtip
+      this.updateShowMsgtip({isShowMsgtip: false})
     }
   }
 }

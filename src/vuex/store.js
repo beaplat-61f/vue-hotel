@@ -10,6 +10,7 @@ let now = new Date(),
 const state = {
   isLoading: false,
   isShowFotter: true,
+  isShowMsgtip: true,
   headerConfig: {
     title: '',
     topTitle: '',
@@ -33,6 +34,9 @@ export default new Vuex.Store({
     },
     UPDATE_SHOW_FOTTER (state, payload) {
       state.isShowFotter = payload.isShowFotter
+    },
+    UPDATE_SHOW_MSGTIP (state, payload) {
+      state.isShowMsgtip = payload.isShowMsgtip
     },
     UPDATE_HEADER (state, payload) {
       for(let key in payload) {
