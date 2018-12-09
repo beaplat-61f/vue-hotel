@@ -10,17 +10,101 @@ import {system, user} from './mock/mock'
 import './style/base.css'
 import App from './App'
 
+import {
+  /* eslint-disable no-unused-vars */
+  Style,
+  // basic
+  Button,
+  Loading,
+  Tip,
+  Toolbar,
+  TabBar,
+  TabPanels,
+  // form
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Input,
+  Textarea,
+  Select,
+  Switch,
+  Rate,
+  Validator,
+  Upload,
+  Form,
+  // popup
+  Popup,
+  Toast,
+  Picker,
+  CascadePicker,
+  DatePicker,
+  TimePicker,
+  SegmentPicker,
+  Dialog,
+  ActionSheet,
+  Drawer,
+  ImagePreview,
+  // scroll
+  Scroll,
+  Slide,
+  IndexList,
+  Swipe,
+  Sticky,
+  ScrollNav,
+  ScrollNavBar,
+  RecycleList
+} from 'cube-ui'
+
+Vue.use(Button)
+Vue.use(Loading)
+Vue.use(Tip)
+Vue.use(Toolbar)
+Vue.use(TabBar)
+Vue.use(TabPanels)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(Input)
+Vue.use(Textarea)
+Vue.use(Select)
+Vue.use(Switch)
+Vue.use(Rate)
+Vue.use(Validator)
+Vue.use(Upload)
+Vue.use(Form)
+Vue.use(Popup)
+Vue.use(Toast)
+Vue.use(Picker)
+Vue.use(CascadePicker)
+Vue.use(DatePicker)
+Vue.use(TimePicker)
+Vue.use(SegmentPicker)
+Vue.use(Dialog)
+Vue.use(ActionSheet)
+Vue.use(Drawer)
+Vue.use(ImagePreview)
+Vue.use(Scroll)
+Vue.use(Slide)
+Vue.use(IndexList)
+Vue.use(Swipe)
+Vue.use(Sticky)
+Vue.use(ScrollNav)
+Vue.use(ScrollNavBar)
+Vue.use(RecycleList)
+
 FastClick.attach(document.body)
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
 // 调用后台接口
-axios.get ('http://139.196.174.209:9005/wap/hotel/basicInfo?appId=1&version=1.0&sign=dc1785047d723694c92f3a55732f7d6e&hotelId=ec858cbd9f2148df9720be1ae20db06d').then (response => {
-  console.log(response.data)
-}).catch (error => {
-  console.log (error)
-})
+// axios.get ('http://139.196.174.209:9005/wap/hotel/basicInfo?appId=1&version=1.0&sign=dc1785047d723694c92f3a55732f7d6e&hotelId=ec858cbd9f2148df9720be1ae20db06d').then (response => {
+//   console.log(response.data)
+// }).catch (error => {
+//   console.log (error)
+// })
 
 axios.get ('http://system.cn').then (response => {
   store.commit ('UPDATE_SYSTEM', response.data)

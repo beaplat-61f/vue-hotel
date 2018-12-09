@@ -233,6 +233,7 @@
     line-height: 1.5rem;
     border-bottom: 1px solid #E0E0E0;
     margin-bottom: .2rem;
+    margin-top: 50px;
   }
 
   .calendar p i,

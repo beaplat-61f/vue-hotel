@@ -76,7 +76,7 @@
           total_day: (endDate.getTime()-beginDate.getTime())/(24*60*60*1000)
         })
 
-        this.$router.replace('/')
+        this.$router.replace('/BookHotel')
       }
     },
     mounted () {

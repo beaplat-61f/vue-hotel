@@ -7,6 +7,8 @@ const vuxLoader = require('vux-loader')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+var TransformModulesPlugin = require('webpack-transform-modules-plugin')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -27,7 +29,8 @@ let webpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'cube-ui': 'cube-ui/lib'
     }
   },
   module: {
@@ -64,5 +67,5 @@ let webpackConfig = {
 
 
 module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
+  plugins: ['vux-ui', 'progress-bar', 'duplicate-style', new TransformModulesPlugin()]
 })

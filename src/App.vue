@@ -6,13 +6,13 @@
       </div>
     </div>
     <view-box ref="viewBox" :body-padding-top="bodyPaddingTop" body-padding-bottom="50px" :key="key">
-      <topbar slot="header" :title="headerConfig.title" :topTitle="headerConfig.topTitle">
+      <!-- <topbar slot="header" :title="headerConfig.title" :topTitle="headerConfig.topTitle">
         <a class="header-right" slot="rightContent" v-if="headerConfig.showRight" @click="showPhones=!showPhones">
           <span class="icon-span"><img src="./assets/images/icon_o_phone.png" alt=""></span><span>电话</span>
         </a>
-      </topbar>
+      </topbar> -->
       <router-view :key="key"></router-view>
-      <bar slot="bottom"></bar>
+      <!-- <bar slot="bottom"></bar> -->
       <popup v-model="showPhones">
         <div class="popup">
           <p class="tip">请选择拨打电话方式</p>
@@ -53,8 +53,9 @@
         return this.$route.path + '-' + now.getTime ()
       },
       bodyPaddingTop() {
-        console.log(this.showMsgtip)
-        return this.showMsgtip ? "100px" : "50px"
+        // console.log(this.showMsgtip)
+        // return this.showMsgtip ? "100px" : "50px"
+        return 0;
       }
     },
     directives: {
